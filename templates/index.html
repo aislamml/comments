@@ -1,0 +1,29 @@
+{%extends 'layout.html'%} 
+
+{%block add%} 
+
+<form action="{{url_for('index')}} " method="post">
+
+<input type="email" name="email" placeholder="Enter your email">
+<input type="text" name="comment" minlength="1" placeholder="Start typing...">
+
+
+<button>Add comment</button>
+
+</form>
+
+
+{%endblock%}
+
+
+{%block body%} 
+
+<ul>
+
+{%for comment in comments%}
+<li>{{comment.email}}: {{comment.comment}}</li>
+{%endfor%}
+</ul>
+
+
+{%endblock%}
